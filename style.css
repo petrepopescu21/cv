@@ -15,9 +15,10 @@ body {
   margin: 0;
 }
 
+
 .spacer {
-    
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     background: white;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -207,5 +208,55 @@ h5>span {
     h5>span {
         border-left: 1px solid #434343;
         padding: 0 15px 0 15px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 41pt;
+    }
+    p {
+        padding: 0 20px 0 20px;
+    }
+
+    h4 {
+        font-size: 12pt;
+    }
+    h4>span {
+        border: none;
+    }
+    h4>span::before {
+        content: '\A';
+        white-space: pre;
+    }
+
+    .xp-item {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .xp-time {
+        width: 100%;
+        text-align: left;
+        padding: 0 20px 0 20px;
+    }
+
+    .xp-desc {
+        width: 100%;
+        border: none;
+        padding: 0 20px 0 20px;
+    }
+
+    .bull {
+        display: none;
+    }
+
+    .cert-container {
+        width: 100%;
+        padding: 0 20px 0 20px;
     }
 }
