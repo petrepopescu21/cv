@@ -20,6 +20,8 @@ aside {
     bottom: 30px;
     right: 30px;
     display: flex;
+    opacity: 0;
+    animation: 3s ease-in-out 1s 1 fadeIn;
 }
 .button {
     margin-left: 12px;
@@ -51,13 +53,17 @@ aside {
 }
 
 header {
+    animation: 4s ease-in-out 0s 1 scaleDown;
     width: 100%;
+    height: 228px;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: #3f51b5;
     padding: 50px 0 50px 0  ;
     color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 p {
@@ -86,8 +92,45 @@ h4 {
     font-size: 14pt;
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(400%);
+  }
+  30% {
+    transform: translateY(400%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleDown {
+    0% {
+    height: 100vh;
+    margin-top: -30px;
+  }
+  30% {
+    height: 100vh;
+    margin-top: -30px;
+  }
+  100% {
+    height: 228px;
+    margin-top: 0;
+  }
+}
+
 section {
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    animation: 4s ease-in-out 0s 1 slideInFromLeft;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     background: white;
     width: 100%;
     display: flex;
