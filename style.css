@@ -28,13 +28,14 @@ aside {
     border-radius: 300px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    background-color: #f33;
+    background-color: #ff4081;
     flex-direction: column;
     display: flex;
     justify-content: center;
     text-align: center;
     color: white;
     font-size: 22pt;
+    cursor: hand;
 }
 
 .button:hover {
@@ -45,8 +46,6 @@ aside {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    background: white;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     padding-bottom: 30px;
     margin-bottom: 30px;
 }
@@ -56,7 +55,7 @@ header {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #43436E;
+    background-color: #3f51b5;
     padding: 50px 0 50px 0  ;
     color: white;
 }
@@ -88,10 +87,13 @@ h4 {
 }
 
 section {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background: white;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 30px
+    margin-top: 30px;
+    padding: 36px 0 36px 0;
 }
 
 h4>span {
@@ -123,11 +125,10 @@ h4>span {
 }
 
 .bull {
-    display: block;
     position: relative;
-    top: 17px;
-    left: 7px;
-    font-size: 23pt;
+    font-size: 10px;
+    left: 5px;
+    top: 27px;
 }
 .xp-time {
     box-sizing: border-box;
@@ -187,6 +188,20 @@ h5>span {
     font-weight: 700;
 }
 @media print {
+
+    section {
+        
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    .spacer {
+        
+        background: white;
+    }
 
     body {
         font-size: 10pt;
