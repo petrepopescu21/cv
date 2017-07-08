@@ -168,7 +168,7 @@ h5>span {
     }
 
     header {
-        padding-bottom: 0;
+        padding: 0;
     }
 
     .container {
@@ -188,7 +188,7 @@ h5>span {
         color: #434343;
     }
     h2 {
-        font-size: 16pt;
+        font-size: 14pt;
         font-family: 'Open Sans', sans-serif;
     }
 
@@ -205,9 +205,17 @@ h5>span {
         display: flex;
     }
 
+    .xp-job-desc {
+        font-size: 8pt;
+    }
+
     h5>span {
         border-left: 1px solid #434343;
         padding: 0 15px 0 15px;
+    }
+
+    .about-text {
+        font-size: 10pt;
     }
 }
 
