@@ -16,10 +16,12 @@ body {
 }
 
 aside {
+    animation: 1s ease-out 2s 1 forwards fadeIn;
     position: fixed;
     bottom: 30px;
     right: 30px;
     display: flex;
+    opacity: 0;
 }
 .button {
     margin-left: 12px;
@@ -87,7 +89,19 @@ h4 {
     font-size: 14pt;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
 section {
+
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     background: white;
     width: 100%;
