@@ -191,6 +191,7 @@ h5>span {
     width: 500px;
     margin: 0 auto;
     margin-bottom: 30px;
+    box-sizing: border-box;
 }
 
 .cert-issuer::before {
