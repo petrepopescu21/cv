@@ -1,0 +1,211 @@
+body {
+    background: #eaeaea;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 30px;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+.spacer {
+    
+    width: 1000px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #434343;
+    padding: 50px 0 50px 0  ;
+    color: white;
+}
+
+p {
+    margin: 0;
+}
+h1,h2,h3,h4,h5 {
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 67pt;
+    font-family: 'Pathway Gothic One', sans-serif;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 25pt;
+    font-family: 'Pathway Gothic One', sans-serif;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14pt;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px
+}
+
+h4>span {
+    border-left: 1px solid white;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.fullwidth {
+    width: 900px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.xp-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.xp-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.bull {
+    display: block;
+    position: relative;
+    top: 17px;
+    left: 7px;
+    font-size: 23pt;
+}
+.xp-time {
+    box-sizing: border-box;
+    width: 20%;
+    text-align: right;
+    padding-right: 15px;
+    padding-top: 23px;
+}
+
+.xp-job-desc {
+    font-size: 10pt;
+}
+
+.xp-desc {
+    box-sizing: border-box;
+    width: 80%;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-left: 2px solid black;
+}
+
+.xp-company {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.about-text {
+    max-width: 900px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h5>span {
+        border-left: 1px solid #434343;
+        padding: 0 0 0 20px;
+        margin-left: 20px;
+    }
+
+#skills {
+    display: none;
+}
+
+.cert-container {
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.cert-issuer::before {
+    content: "Issuer: ";
+    font-weight: 700;
+}
+
+.cert-date::before {
+    content: "Date obtained: ";
+    font-weight: 700;
+}
+@media print {
+
+    body {
+        font-size: 10pt;
+    }
+
+    header {
+        padding-bottom: 0;
+    }
+
+    .container {
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    .fullwidth {
+        width: 80%;
+    }
+    h1 {
+        font-size: 30pt;
+        color: black;
+    }
+
+    h4 {
+        color: #434343;
+    }
+    h2 {
+        font-size: 16pt;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    h4>span {
+        border-left: 1px solid #434343;
+    }
+
+    p {
+        font-size: 10pt;
+    }
+
+    #skills {
+        page-break-before: always;
+        display: flex;
+    }
+
+    h5>span {
+        border-left: 1px solid #434343;
+        padding: 0 15px 0 15px;
+    }
+}
