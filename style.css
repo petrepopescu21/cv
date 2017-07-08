@@ -21,7 +21,7 @@ aside {
     right: 30px;
     display: flex;
     opacity: 0;
-    animation: 3s ease-in-out 1s 1 fadeIn;
+    animation: 3s ease-in-out 1s 1 forwards fadeIn;
 }
 .button {
     margin-left: 12px;
