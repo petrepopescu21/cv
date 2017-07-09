@@ -74,6 +74,7 @@ aside {
     position: absolute;
     width: 100%;
 }
+
 .button .tooltiptext::after {
     content: "";
     position: absolute;
@@ -94,7 +95,7 @@ aside {
     max-width: 1000px;
     margin: 0 auto;
     padding-bottom: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     background: white;
 }
@@ -264,6 +265,7 @@ h5>span {
     }
     .spacer {
         background: white;
+        padding-bottom: 30px;
     }
     body {
         font-size: 10pt;
@@ -312,7 +314,6 @@ h5>span {
     aside {
         display: none;
     }
-
     .xp-desc {
         padding-top: 10px;
     }
@@ -321,6 +322,9 @@ h5>span {
 @media screen and (max-width: 1000px) {
     body {
         padding: 0;
+    }
+    .spacer {
+        margin-bottom: 0;
     }
     #print {
         display: none;
