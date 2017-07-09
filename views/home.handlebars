@@ -35,7 +35,10 @@
                         <div class="xp-desc">
                             <div class="xp-job-title">Azure App Services Support Engineer</div>
                             <div class="xp-company">Microsoft</div>
-                            <div class="xp-job-desc">As part of the 
+                            <div class="xp-job-desc">As a Technical Lead my focus was shifted towards team enabling. This includes handling escalations,
+                                technical guidance, skill assessment, management meetings and handling ambiguous situations.
+                                During this period I have on-boarded three new hires using one-on-one training sessions and
+                                shadowing techniques.
                             </div>
                         </div>
                     </div>
@@ -179,10 +182,27 @@
             </div>
         </section>
         <aside>
-            <div class="button" id="print" onclick="window.print();"><i class="fa fa-print" aria-hidden="true"></i></div>
-            <a class="button" href="Petre_POPESCU_CV.pdf" download="Petre_POPESCU_CV.pdf" id="download"><i class="fa fa-download" aria-hidden="true"></i></a>
+            <a class="button" id="print" onclick="window.print();" ><i class="fa fa-print" aria-hidden="true"></i></a>
+            <a class="button" id="download" href="/download" download="Petre_POPESCU_CV.pdf"><i class="fa fa-download" aria-hidden="true"></i></a>
         </aside>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+    <script>
+        document.getElementById("download").addEventListener("click", download);
+        function print() { action("print") }
+        function download() { action("download") }
+
+        function action(x) {
+            axios.post("/action", {
+                action: x
+            })
+                .then(function (response) {
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+    </script>
 </body>
 
 </html>

@@ -16,12 +16,12 @@ body {
 }
 
 aside {
-    animation: 1s ease-out 2s 1 forwards fadeIn;
+    /*animation: 1s ease-out 2s 1 forwards fadeIn;*/
     position: fixed;
     bottom: 30px;
     right: 30px;
     display: flex;
-    opacity: 0;
+    /*opacity: 0;*/
 }
 
 .button {
