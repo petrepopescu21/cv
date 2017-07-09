@@ -21,6 +21,6 @@ npm start
 ```
 
 ## Resources
-https://redislabs.com/products/redis-cloud/
-https://api.slack.com/incoming-webhooks
-https://randomuser.me/
+* https://api.slack.com/incoming-webhooks
+* https://randomuser.me/
+* https://redislabs.com/products/redis-cloud/
