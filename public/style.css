@@ -94,7 +94,7 @@ aside {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
     margin-bottom: 60px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     background: white;
@@ -266,6 +266,7 @@ h5>span {
     .spacer {
         background: white;
         padding-bottom: 30px;
+        margin-bottom: 0;
     }
     body {
         font-size: 10pt;
