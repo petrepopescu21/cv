@@ -236,8 +236,12 @@ h5>span {
 .cert-container {
     width: 500px;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     box-sizing: border-box;
+}
+
+.cert-reset {
+    margin-bottom: 0;
 }
 
 .cert-issuer::before {
@@ -282,7 +286,7 @@ h5>span {
         color: #434343;
     }
     h2 {
-        font-size: 14pt;
+        font-size: 12pt;
         font-family: 'Open Sans', sans-serif;
     }
     h4>span {
@@ -307,6 +311,10 @@ h5>span {
     }
     aside {
         display: none;
+    }
+
+    .xp-desc {
+        padding-top: 10px;
     }
 }
 
