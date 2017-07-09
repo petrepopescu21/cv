@@ -15,6 +15,10 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 aside {
     /*animation: 1s ease-out 2s 1 forwards fadeIn;*/
     position: fixed;
@@ -39,8 +43,47 @@ aside {
     color: white;
     font-size: 22pt;
     cursor: hand;
+    position: relative;
 }
 
+.button .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+    position: relative;
+    font-size: 10pt;
+}
+
+.button:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cta {
+    position: absolute;
+    width: 100%;
+}
+.button .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
 
 .button:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
