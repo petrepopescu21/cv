@@ -1,12 +1,17 @@
 {
   "name": "cv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Petre's CV with a Slack twist",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Petre Popescu",
+  "homepage": "http://cv.ohnoes.ro",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/petrepopescu21/cv.git"
+  },
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
@@ -17,5 +22,9 @@
     "express-handlebars": "^3.0.0",
     "redis": "^2.7.1",
     "uuid": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=6.9.0",
+    "npm": ">=4.0.0"
   }
 }
