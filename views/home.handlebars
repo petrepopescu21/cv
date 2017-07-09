@@ -184,15 +184,17 @@
         <aside>
             <a class="button" id="print"><i class="fa fa-print" aria-hidden="true"></i></a>
             <a class="button" id="download" href="/download" download="Petre_POPESCU_CV.pdf"><i class="fa fa-download" aria-hidden="true"></i></a>
-            <a class="button" id="github" href="/download" ><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a class="button" id="github" href="https://github.com/petrepopescu21/cv" ><i class="fa fa-github" aria-hidden="true"></i></a>
         </aside>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
     <script>
         document.getElementById("download").addEventListener("click", downloadAction);
         document.getElementById("print").addEventListener("click", printAction);
+        document.getElementById("github").addEventListener("click", githubAction);
         function printAction() { action("print"); window.print(); }
         function downloadAction() { action("download") }
+        function githubAction() { action("github") }
 
         function action(x) {
             axios.post("/action", {

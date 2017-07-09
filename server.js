@@ -102,6 +102,9 @@ function slack(obj) {
     if (obj.action == "print") {
         slackSend(obj.name + " has printed your CV")
     }
+    if (obj.action == "github") {
+        slackSend(obj.name + " has visited your Github page")
+    }
 }
 
 function slackSend(message) {
