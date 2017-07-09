@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const app = express()
 const fs = require('fs')
@@ -7,13 +9,15 @@ const cookieParser = require('cookie-parser')
 const uuidv4 = require('uuid/v4')
 const axios = require('axios')
 const redis = require('redis'),
-    client = redis.createClient(6380, 'petrecv.redis.cache.windows.net', {
-        auth_pass: '9V9XjBKBtX5+WI03UNu82T+9DuFkNxVAlncvgNvx9Cg=',
+    client = redis.createClient(6380, process.env.REDIS_ENDPOINT, {
+        auth_pass: process.env.REDIS_KEY,
         tls: {
-            servername: 'petrecv.redis.cache.windows.net'
+            servername: process.env.REDIS_ENDPOINT
         }
     })
-const slackWebhook = "https://hooks.slack.com/services/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"
+const slackWebhook = process.env.SLACK_WEBHOOK
+
+
 
 app.use(bodyParser.json())
 app.use(cookieParser())
@@ -81,26 +85,27 @@ app.get('/download', (req, res) => {
 
 app.use(express.static('public'))
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3000, function () {
+    console.log("Listening on " + process.env.PORT + " or 3000")
+})
 
 function slack(obj) {
-    console.log(obj)
-    if (obj.newuser==true){
-            slackSend("A new user called "+obj.name+" has visited your CV")
+    if (obj.newuser == true) {
+        slackSend("A new user called " + obj.name + " has visited your CV")
     }
-    if (obj.action=="visit" && obj.newuser==false) {
+    if (obj.action == "visit" && obj.newuser == false) {
         slackSend(obj.name + " has visited your CV")
     }
-    if (obj.action=="download") {
+    if (obj.action == "download") {
         slackSend(obj.name + " has downloaded your CV")
     }
-    if (obj.action=="print") {
+    if (obj.action == "print") {
         slackSend(obj.name + " has printed your CV")
     }
 }
 
 function slackSend(message) {
-    axios.post(slackWebhook,{
+    axios.post(slackWebhook, {
         text: message
     })
 }
