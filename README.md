@@ -1,5 +1,5 @@
 # CV
-My personal Curriculum Vitae
+My personal web-based Curriculum Vitae, featuring a responsive and print-friendly design.
 
 ## About
 This app uses a Redis cache to track visitors and a Slack webhook integration in order to send notifications regarding the visitors' activity.
@@ -19,3 +19,8 @@ When ready, install npm modules and run the app
 npm install
 npm start
 ```
+
+## Resources
+https://redislabs.com/products/redis-cloud/
+https://api.slack.com/incoming-webhooks
+https://randomuser.me/
