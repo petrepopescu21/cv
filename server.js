@@ -26,7 +26,7 @@ app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars')
 
 app.use('*', (req, res, next) => {
-
+    req.ipaddr = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     var cookie = req.cookies.user
     if (cookie === undefined) {
         req.newuser = true
@@ -60,7 +60,8 @@ app.get('/', (req, res) => {
     slack({
         "name": req.fullname,
         "action": "visit",
-        "newuser": req.newuser
+        "newuser": req.newuser,
+        "ip": req.ipaddr
     })
     res.render('home')
 })
@@ -70,7 +71,8 @@ app.post('/action', (req, res) => {
     slack({
         "name": req.fullname,
         "action": req.body.action,
-        "newuser": false
+        "newuser": false,
+        "ip": req.ipaddr
     })
     res.send('ok')
 })
@@ -91,19 +93,19 @@ app.listen(process.env.PORT || 3000, function () {
 
 function slack(obj) {
     if (obj.newuser == true) {
-        slackSend("A new user called " + obj.name + " has visited your CV")
+        slackSend("A new user called " + obj.name + " has visited your CV from IP "+obj.ip)
     }
     if (obj.action == "visit" && obj.newuser == false) {
-        slackSend(obj.name + " has visited your CV")
+        slackSend(obj.name + " has visited your CV from IP "+obj.ip)
     }
     if (obj.action == "download") {
-        slackSend(obj.name + " has downloaded your CV")
+        slackSend(obj.name + " has downloaded your CV from IP "+obj.ip)
     }
     if (obj.action == "print") {
-        slackSend(obj.name + " has printed your CV")
+        slackSend(obj.name + " has printed your CV from IP "+obj.ip)
     }
     if (obj.action == "github") {
-        slackSend(obj.name + " has visited your Github page")
+        slackSend(obj.name + " has visited your Github page from IP "+obj.ip)
     }
 }
 
