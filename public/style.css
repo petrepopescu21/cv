@@ -300,6 +300,7 @@ h5>span {
         font-size: 10pt;
     }
     .break {
+        margin-top: 0;
         page-break-before: always;
     }
     .skills {
