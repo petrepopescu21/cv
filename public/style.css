@@ -33,7 +33,7 @@ aside {
     width: 50px;
     height: 50px;
     border-radius: 300px;
-    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     background-color: #ff4081;
     flex-direction: column;
@@ -87,7 +87,7 @@ aside {
 }
 
 .button:hover {
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .spacer {
@@ -96,7 +96,7 @@ aside {
     margin: 0 auto;
     padding-bottom: 60px;
     margin-bottom: 60px;
-    /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     background: white;
 }
 
@@ -210,10 +210,7 @@ h4>span {
     padding-left: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
-}
-
-.fa {
-    display: none;
+    border-left: 2px solid black;
 }
 
 .xp-company {
@@ -270,7 +267,7 @@ h5>span {
         background: white;
         padding-bottom: 30px;
         margin-bottom: 0;
-        box-shadow: #fff;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0) !important;
     }
     body {
         font-size: 10pt;
@@ -369,6 +366,9 @@ h5>span {
         width: 100%;
         border: none;
         padding: 0 20px 0 20px;
+    }
+    .fa {
+        display: none;
     }
     .bull {
         display: none;
