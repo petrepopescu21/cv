@@ -255,6 +255,10 @@ h5>span {
     font-weight: 700;
 }
 
+section.break {
+    margin-top: 0;
+}
+
 @media print {
     section {
         width: 100%;
@@ -368,9 +372,9 @@ h5>span {
         border: none;
         padding: 0 20px 0 20px;
     }
-    .fa {
+    /* .fa {
         display: none;
-    }
+    } */
     .bull {
         display: none;
     }

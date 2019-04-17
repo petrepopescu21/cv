@@ -8,14 +8,14 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const uuidv4 = require('uuid/v4')
 const axios = require('axios')
-const redis = require('redis'),
-    client = redis.createClient(6380, process.env.REDIS_ENDPOINT, {
-        auth_pass: process.env.REDIS_KEY,
-        tls: {
-            servername: process.env.REDIS_ENDPOINT
-        }
-    })
-const slackWebhook = process.env.SLACK_WEBHOOK
+// const redis = require('redis'),
+//     client = redis.createClient(6380, process.env.REDIS_ENDPOINT, {
+//         auth_pass: process.env.REDIS_KEY,
+//         tls: {
+//             servername: process.env.REDIS_ENDPOINT
+//         }
+//     })
+// const slackWebhook = process.env.SLACK_WEBHOOK
 
 
 
@@ -25,55 +25,55 @@ app.use(cookieParser())
 app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars')
 
-app.use('*', (req, res, next) => {
-    req.ipaddr = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    var cookie = req.cookies.user
-    if (cookie === undefined) {
-        req.newuser = true
-        req.uuid = uuidv4()
-        res.cookie('user', req.uuid, {
-            maxAge: 900000,
-            httpOnly: true
-        })
-        axios.get("https://randomuser.me/api/").then(response => {
-            req.fullname = response.data.results[0].name.first + " " + response.data.results[0].name.last
-            client.set(req.uuid, req.fullname, function (err, reply) {
+// app.use('*', (req, res, next) => {
+//     req.ipaddr = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+//     var cookie = req.cookies.user
+//     if (cookie === undefined) {
+//         req.newuser = true
+//         req.uuid = uuidv4()
+//         res.cookie('user', req.uuid, {
+//             maxAge: 900000,
+//             httpOnly: true
+//         })
+//         axios.get("https://randomuser.me/api/").then(response => {
+//             req.fullname = response.data.results[0].name.first + " " + response.data.results[0].name.last
+//             client.set(req.uuid, req.fullname, function (err, reply) {
 
-            })
-            next()
-        }).catch(error => {
-            //add logic
-        })
-    } else {
-        req.newuser = false
-        req.uuid = cookie
-        client.get(req.uuid, function (err, reply) {
-            req.fullname = reply
-            next()
-        });
-    }
+//             })
+//             next()
+//         }).catch(error => {
+//             //add logic
+//         })
+//     } else {
+//         req.newuser = false
+//         req.uuid = cookie
+//         client.get(req.uuid, function (err, reply) {
+//             req.fullname = reply
+//             next()
+//         });
+//     }
 
 
-})
+// })
 
 app.get('/', (req, res) => {
-    slack({
-        "name": req.fullname,
-        "action": "visit",
-        "newuser": req.newuser,
-        "ip": req.ipaddr
-    })
+    // slack({
+    //     "name": req.fullname,
+    //     "action": "visit",
+    //     "newuser": req.newuser,
+    //     "ip": req.ipaddr
+    // })
     res.render('home')
 })
 
 
 app.post('/action', (req, res) => {
-    slack({
-        "name": req.fullname,
-        "action": req.body.action,
-        "newuser": false,
-        "ip": req.ipaddr
-    })
+    // slack({
+    //     "name": req.fullname,
+    //     "action": req.body.action,
+    //     "newuser": false,
+    //     "ip": req.ipaddr
+    // })
     res.send('ok')
 })
 
